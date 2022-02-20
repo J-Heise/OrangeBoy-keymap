@@ -25,11 +25,11 @@ enum layer_names {
 
 // Defines custom keycodes for using macros
 enum custom_keycodes {
-    DIACRITIC_A = SAFE_RANGE,
-    DIACRITIC_U,
-    DIACRITIC_O,
+    DIA_A = SAFE_RANGE,
+    DIA_U,
+    DIA_O,
     DOUBLE_S,
-    EURO_CURRENCY_SIGN,
+    EURO_KC,
 };
 
 //Defines macros:
@@ -37,8 +37,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
   switch (keycode)
   {
-    //Macro for ä and Ä.
-    case DIACRITIC_A:
+    //Macro for diacritics ä and Ä.
+    case DIA_A:
         if(record->event.pressed)
             {
                 register_code(KC_RALT);
@@ -51,8 +51,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
             }
     return false;
 
-    //Macro for ü and Ü.
-    case DIACRITIC_U:
+    //Macro for diacritics ü and Ü.
+    case DIA_U:
         if(record->event.pressed)
             {
                 register_code(KC_RALT);
@@ -66,7 +66,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     return false;
 
     //Macro for ö and Ö.
-    case DIACRITIC_O:
+    case DIA_O:
         if(record->event.pressed)
             {
                 register_code(KC_RALT);
@@ -94,7 +94,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     return false;
 
     //Macro for €.
-    case EURO_CURRENCY_SIGN:
+    case EURO:
         if(record->event.pressed)
             {
                 register_code(KC_RALT);
@@ -126,8 +126,8 @@ KC_PGDN, MO(1),   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,   
 //Second Layer (Accessed through pressing MO(1)):
 [_FN1] = LAYOUT(
 KC_TRNS, KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS, KC_DEL,
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MPLY, KC_TRNS, KC_TRNS, KC_TRNS,
-KC_TRNS, KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,
+KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, EURO_KC, KC_TRNS, KC_TRNS, KC_TRNS, DIA_U,   KC_TRNS, DIA_O,   KC_MPLY, KC_TRNS, KC_TRNS, KC_TRNS,
+KC_TRNS, KC_CAPS, DIA_A,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLU, KC_TRNS,
          KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,          KC_TRNS,          KC_TRNS, KC_TRNS, KC_MPRV, KC_VOLD, KC_MNXT
 };
