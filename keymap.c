@@ -41,13 +41,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     case DIACRITIC_A:
         if(record->event.pressed)
             {
-                //When keycode is pressed:
                 register_code(KC_RALT);
                 register_code(KC_Q);
             }
         else
             {
-                //When keycode is released:
                 unregister_code(KC_RALT);
                 unregister_code(KC_Q);
             }
@@ -57,13 +55,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     case DIACRITIC_U:
         if(record->event.pressed)
             {
-                //When keycode is pressed:
                 register_code(KC_RALT);
                 register_code(KC_Y);
             }
         else
             {
-                //When keycode is released:
                 unregister_code(KC_RALT);
                 unregister_code(KC_Y);
             }
@@ -73,13 +69,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     case DIACRITIC_O:
         if(record->event.pressed)
             {
-                //When keycode is pressed:
                 register_code(KC_RALT);
                 register_code(KC_P);
             }
         else
             {
-                //When keycode is released:
                 unregister_code(KC_RALT);
                 unregister_code(KC_P);
             }
@@ -89,13 +83,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     case DOUBLE_S:
         if(record->event.pressed)
             {
-                //When keycode is pressed:
                 register_code(KC_RALT);
                 register_code(KC_S);
             }
         else
             {
-                //When keycode is released:
                 unregister_code(KC_RALT);
                 unregister_code(KC_S);
             }
@@ -105,13 +97,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     case EURO_CURRENCY_SIGN:
         if(record->event.pressed)
             {
-                //When keycode is pressed:
                 register_code(KC_RALT);
                 register_code(KC_5);
             }
         else
             {
-                //When keycode is released:
                 unregister_code(KC_RALT);
                 unregister_code(KC_5);
             }
