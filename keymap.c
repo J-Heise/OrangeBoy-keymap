@@ -23,6 +23,101 @@
 enum custom_keycodes {
     LAYER0 = SAFE_RANGE,
     LAYER1,
+    DIACRITIC_A,
+    DIACRITIC_U,
+    DIACRITIC_O,
+    DOUBLE_S,
+    EURO_CURRENCY_SIGN,
+};
+
+//Defines macros:
+bool process_record_user(uint16_t keycode, keyrecord_t *record)
+{
+  switch (keycode)
+  {
+    //Macro for ä and Ä.
+    case DIACRITIC_A:
+        if(record->event.pressed)
+            {
+                //When keycode is pressed:
+                register_code(KC_RALT);
+                register_code(KC_Q);
+            }
+        else
+            {
+                //When keycode is released:
+                unregister_code(KC_RALT);
+                unregister_code(KC_Q);
+            }
+    return false;
+
+    //Macro for ü and Ü.
+    case DIACRITIC_U:
+        if(record->event.pressed)
+            {
+                //When keycode is pressed:
+                register_code(KC_RALT);
+                register_code(KC_Y);
+            }
+        else
+            {
+                //When keycode is released:
+                unregister_code(KC_RALT);
+                unregister_code(KC_Y);
+            }
+    return false;
+
+    //Macro for ö and Ö.
+    case DIACRITIC_O:
+        if(record->event.pressed)
+            {
+                //When keycode is pressed:
+                register_code(KC_RALT);
+                register_code(KC_P);
+            }
+        else
+            {
+                //When keycode is released:
+                unregister_code(KC_RALT);
+                unregister_code(KC_P);
+            }
+    return false;
+
+    //Macro for ß.
+    case DOUBLE_S:
+        if(record->event.pressed)
+            {
+                //When keycode is pressed:
+                register_code(KC_RALT);
+                register_code(KC_S);
+            }
+        else
+            {
+                //When keycode is released:
+                unregister_code(KC_RALT);
+                unregister_code(KC_S);
+            }
+    return false;
+
+    //Macro for €.
+    case EURO_CURRENCY_SIGN:
+        if(record->event.pressed)
+            {
+                //When keycode is pressed:
+                register_code(KC_RALT);
+                register_code(KC_5);
+            }
+        else
+            {
+                //When keycode is released:
+                unregister_code(KC_RALT);
+                unregister_code(KC_5);
+            }
+    return false;
+
+    default:
+    return true;
+  }
 };
 
 //Defines different keyboard layers:
