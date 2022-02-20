@@ -94,7 +94,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     return false;
 
     //Macro for €.
-    case EURO:
+    case EURO_KC:
         if(record->event.pressed)
             {
                 register_code(KC_RALT);
@@ -121,7 +121,7 @@ KC_MUTE, KC_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,   
 KC_PGUP, KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
 KC_PGDN, MO(1),   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,
          KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_UP,   KC_RSFT,
-         KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  MO(1),            KC_SPC,           KC_RALT, MO(1),   KC_LEFT, KC_DOWN, KC_RGHT
+         KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  MO(1),            KC_SPC,           KC_RALT, MO(1),   KC_LEFT, KC_DOWN, KC_RGHT),
 
 //Second Layer (Accessed through pressing MO(1)):
 [_FN1] = LAYOUT(
@@ -129,5 +129,5 @@ KC_TRNS, KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,  
 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, EURO_KC, KC_TRNS, KC_TRNS, KC_TRNS, DIA_U,   KC_TRNS, DIA_O,   KC_MPLY, KC_TRNS, KC_TRNS, KC_TRNS,
 KC_TRNS, KC_CAPS, DIA_A,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLU, KC_TRNS,
-         KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,          KC_TRNS,          KC_TRNS, KC_TRNS, KC_MPRV, KC_VOLD, KC_MNXT
+         KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,          KC_TRNS,          KC_TRNS, KC_TRNS, KC_MPRV, KC_VOLD, KC_MNXT),
 };
