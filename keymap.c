@@ -14,6 +14,9 @@
 */
 
 // Written for Orange Boy Ergo
+// Press and hold Boot0, tap NRST, release Boot0 after about 2 seconds to enter bootloader mode.
+// Custom layout assumes the PC is set to the English US International layout.
+// MCU: STM32F401/STM32F411 "BlackPill" 
 
 #include QMK_KEYBOARD_H
 
@@ -113,6 +116,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
         return true;
     }
 };
+
 //Defines different keyboard layers:
  const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = 
 {
